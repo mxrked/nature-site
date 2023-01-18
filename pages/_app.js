@@ -83,6 +83,15 @@ function MyApp({ Component, pageProps }) {
     }
   }, []);
 
+  //! Enable vertical scrolling
+  useEffect(() => {
+    if (!sessionStorage.getItem("Mobile Nav Opened")) {
+      if (!sessionStorage.getItem("Modal Opened")) {
+        document.body.style.overflowY = "auto";
+      }
+    }
+  }, []);
+
   /**
    * ? DATA
    */
