@@ -1,0 +1,22 @@
+[
+  {
+    "galleryID": "GALLERY_1",
+    "galleryItemName": "Log Cabin",
+    "galleryItemImg": "https://raw.githubusercontent.com/mxrked/nature-site-cdn/main/imgs/gallery/log-cabin/log-cabin.webp"
+  },
+  {
+    "galleryID": "GALLERY_2",
+    "galleryItemName": "Red Mushroom",
+    "galleryItemImg": "https://raw.githubusercontent.com/mxrked/nature-site-cdn/main/imgs/gallery/red-mushroom/red-mushroom.webp"
+  },
+  {
+    "galleryID": "GALLERY_3",
+    "galleryItemName": "Squirrel",
+    "galleryItemImg": "https://raw.githubusercontent.com/mxrked/nature-site-cdn/main/imgs/gallery/squirrel/squirrel.webp"
+  },
+  {
+    "galleryID": "GALLERY_4",
+    "galleryItemName": "Rainnbow Over Mountains",
+    "galleryItemImg": "https://raw.githubusercontent.com/mxrked/nature-site-cdn/main/imgs/gallery/rainbow-over-mountains/rainbow-over-mountains.webp"
+  }
+]

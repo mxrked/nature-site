@@ -1,0 +1,63 @@
+.overrides_Index .index-gallery-slider .slick-dots {
+  position: relative;
+  bottom: 0;
+  top: 30px;
+}
+
+.overrides_Index .index-gallery-slider .slick-dots li {
+  margin: 10px;
+}
+
+.overrides_Index .index-gallery-slider .slick-dots li button:hover::before {
+  color: #030303;
+}
+
+.overrides_Index .index-gallery-slider .slick-dots li button::before {
+  color: #5b5b5b;
+  font-size: 25px;
+}
+
+.overrides_Index
+  .index-gallery-slider
+  .slick-dots
+  .slick-active
+  button::before {
+  color: #171717;
+}
+
+@media all and (max-width: 768px) {
+  .overrides_Index .index-gallery-slider .slick-dots li {
+    margin: 7px;
+  }
+  .overrides_Index .index-gallery-slider .slick-dots li button::before {
+    font-size: 19px;
+  }
+}
+
+@media all and (max-width: 419px) {
+  .overrides_Index .index-gallery-slider .slick-dots li {
+    margin: 5px;
+  }
+  .overrides_Index .index-gallery-slider .slick-dots li button::before {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+  .overrides_Index .index-gallery-slider .slick-dots li {
+    margin: 8px;
+  }
+  .overrides_Index .index-gallery-slider .slick-dots li button::before {
+    font-size: 23px;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+  .overrides_Index .index-gallery-slider .slick-dots li {
+    margin: 8px;
+  }
+  .overrides_Index .index-gallery-slider .slick-dots li button::before {
+    font-size: 19px;
+  }
+}
+/*# sourceMappingURL=overrides.css.map */

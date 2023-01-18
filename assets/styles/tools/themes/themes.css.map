@@ -1,0 +1,13 @@
+<<<<<<< HEAD
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "themes.scss"
+    ],
+    "names": [],
+    "file": "themes.css"
+}
+=======
+{"version":3,"sources":[],"names":[],"mappings":"","file":"themes.css"}
+>>>>>>> ee372063110e67db69604fed90654e71475fdf8d

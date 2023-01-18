@@ -1,0 +1,131 @@
+@font-face {
+  font-family: "Righteous Regular";
+  src: url("../../../fonts/righteous/Righteous-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Cabin Bold";
+  src: url("../../../fonts/cabin/Cabin-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Cabin Semi Bold";
+  src: url("../../../fonts/cabin/Cabin-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "Inter Regular";
+  src: url("../../../fonts/inter/Inter-Regular.ttf");
+}
+
+.img_viewer_modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 500;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.img_viewer_modal .img_viewer_modal_darken {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+}
+
+.img_viewer_modal .img_viewer_modal_img_holder {
+  max-width: 1000px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.img_viewer_modal .img_viewer_modal_img_holder img {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  max-height: 1000px;
+  opacity: 0;
+}
+
+@media all and (max-width: 1995px) {
+  .img_viewer_modal .img_viewer_modal_img_holder {
+    max-width: 1500px;
+    width: 85%;
+  }
+}
+
+@media all and (max-width: 991px) {
+  .img_viewer_modal .img_viewer_modal_img_holder {
+    max-width: 1500px;
+    width: 95%;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .img_viewer_modal .img_viewer_modal_img_holder {
+    max-width: 1500px;
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 419px) {
+  .img_viewer_modal .img_viewer_modal_img_holder {
+    max-width: 1500px;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-device-width: 411px) and (max-device-width: 823px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .img_viewer_modal .img_viewer_modal_img_holder {
+    max-width: 85%;
+    height: 85%;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+  .img_viewer_modal .img_viewer_modal_img_holder {
+    max-width: 700px;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+  .img_viewer_modal .img_viewer_modal_img_holder {
+    max-width: 600px;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .img_viewer_modal .img_viewer_modal_img_holder {
+    max-width: 800px;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .img_viewer_modal .img_viewer_modal_img_holder {
+    max-width: 800px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .img_viewer_modal .img_viewer_modal_img_holder {
+    max-width: 800px;
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=Misc.module.css.map */
