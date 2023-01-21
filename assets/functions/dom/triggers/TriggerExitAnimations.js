@@ -28,6 +28,10 @@ export default function TriggerExitAnimations() {
   document.body.style.overflowY = "hidden";
   document.body.style.pointerEvents = "none";
 
+  setTimeout(() => {
+    document.querySelector(".page").classList.toggle("hide-page");
+  }, 2550);
+
   // fm-scale
   if (document.querySelector(".fm-scale")) {
     const FM_SCALES = document.querySelectorAll(".fm-scale");
@@ -64,6 +68,15 @@ export default function TriggerExitAnimations() {
     }, 500);
   }
 
+  // fm-slide-h
+  if (document.querySelector(".fm-slide-h")) {
+    const FM_SLIDE_HS = document.querySelectorAll(".fm-slide-h");
+
+    setTimeout(() => {
+      FMSlide("H", FM_SLIDE_HS);
+    }, 500);
+  }
+
   // fm-fade-up
   if (document.querySelector(".fm-fade-up")) {
     const FM_FADE_UPS = document.querySelectorAll(".fm-fade-up");
@@ -71,6 +84,21 @@ export default function TriggerExitAnimations() {
     setTimeout(() => {
       FM_FADE_UPS.forEach((fade) => {
         fade.style.transform = "translateY(-50px)";
+
+        // Removing the scroll fade class to prevent reanimating
+        RemoveScrollFadeClass(fade);
+        fade.style.opacity = 0;
+      });
+    }, 500);
+  }
+
+  // fm-fade-down
+  if (document.querySelector(".fm-fade-down")) {
+    const FM_FADE_DOWNS = document.querySelectorAll(".fm-fade-down");
+
+    setTimeout(() => {
+      FM_FADE_DOWNS.forEach((fade) => {
+        fade.style.transform = "translateY(50px)";
 
         // Removing the scroll fade class to prevent reanimating
         RemoveScrollFadeClass(fade);

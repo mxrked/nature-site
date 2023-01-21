@@ -14,9 +14,12 @@ import RemoveStorageVariable from "../assets/functions/data/storage/RemoveStorag
 import PreventPageReload from "../assets/functions/dom/prevents/PreventPageReload";
 
 // Component Imports
+import { HeadCnt } from "../assets/components/global/misc/HeadCnt";
 import { DesktopNav } from "../assets/components/global/nav/desktop/DesktopNav";
 import { MobileNav } from "../assets/components/global/nav/mobile/MobileNav";
 import { MobileNavMenu } from "../assets/components/global/nav/mobile/MobileNavMenu";
+
+import { Footer } from "../assets/components/global/footer/Footer";
 
 // Style Imports
 import "../assets/styles/modules/Gallery/Gallery.module.css";
@@ -38,16 +41,31 @@ export default function Gallery() {
   // Trigger Exit Animations on reload
   useEffect(() => {
     window.addEventListener("keydown", (e) => {
-      PreventPageReload(e); // NOTE THIS ONLY WORKS ON KEYBOARD not mouse
-      DeclareStorageVariable("session", "Reload Page", true);
-      TriggerExitAnimations();
+      if (e.key === "r" && e.ctrlKey) {
+        PreventPageReload(e); // NOTE THIS ONLY WORKS ON KEYBOARD not mouse
+        DeclareStorageVariable("session", "Reload Page", true);
+        TriggerExitAnimations();
 
-      setTimeout(() => {
-        if (sessionStorage.getItem("Reload Page")) {
-          RemoveStorageVariable("session", "Reload Page");
-          location.reload();
-        }
-      }, 800);
+        setTimeout(() => {
+          if (sessionStorage.getItem("Reload Page")) {
+            RemoveStorageVariable("session", "Reload Page");
+            location.reload();
+          }
+        }, 800);
+      }
+
+      if (e.keyCode == 116) {
+        PreventPageReload(e); // NOTE THIS ONLY WORKS ON KEYBOARD not mouse
+        DeclareStorageVariable("session", "Reload Page", true);
+        TriggerExitAnimations();
+
+        setTimeout(() => {
+          if (sessionStorage.getItem("Reload Page")) {
+            RemoveStorageVariable("session", "Reload Page");
+            location.reload();
+          }
+        }, 800);
+      }
     });
   }, []);
 
@@ -58,11 +76,21 @@ export default function Gallery() {
 
   return (
     <div id="PAGE" className="page half-second overrides_Gallery">
+      <HeadCnt
+        title="Naturmore - Gallery"
+        description="Naturmore is for all outdoor lovers and those who want to experience nature from their computer."
+        keywords="naturmore, nature, photo gallery, outdoors, green"
+        url="https://neon-medovik-7e8138.netlify.app/gallery"
+        robots="no index"
+      />
+
       <DesktopNav />
       <MobileNav />
       <MobileNavMenu />
 
-      <main id="PAGE_CNT" className="page-main full-second"></main>
+      <main id="PAGE_CNT" className="page-main full-second">
+        <Footer />
+      </main>
     </div>
   );
 }

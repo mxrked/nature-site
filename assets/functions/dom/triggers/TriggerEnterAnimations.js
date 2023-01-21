@@ -25,6 +25,8 @@ function FMSlide(slideType, elements) {
 export default function TriggerEnterAnimations() {
   // page
   if (document.querySelector(".page")) {
+    document.querySelector(".page").classList.remove("hide-page");
+
     setTimeout(() => {
       document.querySelectorAll(".page").forEach((page) => {
         page.style.opacity = 1;
@@ -69,12 +71,34 @@ export default function TriggerEnterAnimations() {
     }, 500);
   }
 
+  // fm-slide-h
+  if (document.querySelector(".fm-slide-h")) {
+    const FM_SLIDE_HS = document.querySelectorAll(".fm-slide-h");
+
+    setTimeout(() => {
+      FMSlide("H", FM_SLIDE_HS);
+    }, 500);
+  }
+
   // fm-fade-up
   if (document.querySelector(".fm-fade-up")) {
     const FM_FADE_UPS = document.querySelectorAll(".fm-fade-up");
 
     setTimeout(() => {
       FM_FADE_UPS.forEach((fade) => {
+        if (!fade.classList.contains("scroll-fade")) {
+          fade.style.transform = "translateY(0)";
+        }
+      });
+    }, 500);
+  }
+
+  // fm-fade-down
+  if (document.querySelector(".fm-fade-down")) {
+    const FM_FADE_DOWNS = document.querySelectorAll(".fm-fade-down");
+
+    setTimeout(() => {
+      FM_FADE_DOWNS.forEach((fade) => {
         if (!fade.classList.contains("scroll-fade")) {
           fade.style.transform = "translateY(0)";
         }

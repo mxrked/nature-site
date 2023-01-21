@@ -146,6 +146,10 @@ select {
   visibility: hidden;
 }
 
+.hide-page {
+  opacity: 0 !important;
+}
+
 .fm-scale {
   scale: 1.07;
 }

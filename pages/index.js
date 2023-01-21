@@ -14,6 +14,7 @@ import RemoveStorageVariable from "../assets/functions/data/storage/RemoveStorag
 import PreventPageReload from "../assets/functions/dom/prevents/PreventPageReload";
 
 import {
+  INDEX_CONTACT_BG,
   INDEX_INFO_1_BG,
   INDEX_INFO_2_BG,
   INDEX_TOP_BG,
@@ -26,6 +27,7 @@ import {
 } from "../assets/imgs/cdns/IMG_CDNS";
 
 // Component Imports
+import { HeadCnt } from "../assets/components/global/misc/HeadCnt";
 import { DesktopNav } from "../assets/components/global/nav/desktop/DesktopNav";
 import { MobileNav } from "../assets/components/global/nav/mobile/MobileNav";
 import { MobileNavMenu } from "../assets/components/global/nav/mobile/MobileNavMenu";
@@ -35,6 +37,9 @@ import { ImgViewerModal } from "../assets/components/global/misc/ImgViewerModal"
 import { IndexTop } from "../assets/components/pages/index/IndexTop";
 import { IndexGallery } from "../assets/components/pages/index/IndexGallery";
 import { IndexInfo } from "../assets/components/pages/index/IndexInfo";
+import { IndexContact } from "../assets/components/pages/index/IndexContact";
+
+import { Footer } from "../assets/components/global/footer/Footer";
 
 // Style Imports
 import "../assets/styles/modules/Index/Index.module.css";
@@ -70,16 +75,31 @@ export default function Home({ display_index_gallery_data }) {
   // Trigger Exit Animations on reload
   useEffect(() => {
     window.addEventListener("keydown", (e) => {
-      PreventPageReload(e); // NOTE THIS ONLY WORKS ON KEYBOARD not mouse
-      DeclareStorageVariable("session", "Reload Page", true);
-      TriggerExitAnimations();
+      if (e.key === "r" && e.ctrlKey) {
+        PreventPageReload(e); // NOTE THIS ONLY WORKS ON KEYBOARD not mouse
+        DeclareStorageVariable("session", "Reload Page", true);
+        TriggerExitAnimations();
 
-      setTimeout(() => {
-        if (sessionStorage.getItem("Reload Page")) {
-          RemoveStorageVariable("session", "Reload Page");
-          location.reload();
-        }
-      }, 800);
+        setTimeout(() => {
+          if (sessionStorage.getItem("Reload Page")) {
+            RemoveStorageVariable("session", "Reload Page");
+            location.reload();
+          }
+        }, 800);
+      }
+
+      if (e.keyCode == 116) {
+        PreventPageReload(e); // NOTE THIS ONLY WORKS ON KEYBOARD not mouse
+        DeclareStorageVariable("session", "Reload Page", true);
+        TriggerExitAnimations();
+
+        setTimeout(() => {
+          if (sessionStorage.getItem("Reload Page")) {
+            RemoveStorageVariable("session", "Reload Page");
+            location.reload();
+          }
+        }, 800);
+      }
     });
   }, []);
 
@@ -101,6 +121,14 @@ export default function Home({ display_index_gallery_data }) {
 
   return (
     <div id="PAGE" className="page half-second overrides_Index">
+      <HeadCnt
+        title="Naturmore - Be One With Nature"
+        description="Naturmore is for all outdoor lovers and those who want to experience nature from their computer."
+        keywords="naturmore, nature, photo gallery, outdoors, green"
+        url="https://neon-medovik-7e8138.netlify.app/"
+        robots="index"
+      />
+
       <DesktopNav />
       <MobileNav />
       <MobileNavMenu />
@@ -155,11 +183,20 @@ export default function Home({ display_index_gallery_data }) {
         modalImgSrc={INDEX_INFO_2_BG}
         modalImgName="River in a Canyon BG"
       />
+      <ImgViewerModal
+        modalID="INDEX_GALLERY_7"
+        modalClass="index_modal"
+        modalType="index-modal"
+        modalImgSrc={INDEX_CONTACT_BG}
+        modalImgName="Kids sitting on a bench at a lake BG"
+      />
 
       <main id="PAGE_CNT" className="page-main full-second">
         <IndexTop />
         <IndexGallery data={display_index_gallery_data} />
         <IndexInfo />
+        <IndexContact />
+        <Footer />
       </main>
     </div>
   );

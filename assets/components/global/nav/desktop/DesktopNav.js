@@ -81,14 +81,14 @@ export const DesktopNav = () => {
                 </ul>
 
                 <ul className={`${styles.socials}`}>
-                  <li>
-                    <FaFacebook className={`${styles.icon} half-second`} />
+                  <li className="half-second">
+                    <FaFacebook className={`${styles.icon}`} />
                   </li>
-                  <li>
-                    <FaTwitter className={`${styles.icon} half-second`} />
+                  <li className="half-second">
+                    <FaTwitter className={`${styles.icon}`} />
                   </li>
-                  <li>
-                    <FaInstagram className={`${styles.icon} half-second`} />
+                  <li className="half-second">
+                    <FaInstagram className={`${styles.icon}`} />
                   </li>
                 </ul>
               </div>

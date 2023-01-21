@@ -157,6 +157,10 @@ select {
   opacity: 0;
   visibility: hidden;
 }
+
+.hide-page {
+  opacity: 0 !important;
+}
 // .page-main {
 //   height: 100vh;
 //   background-color: red;

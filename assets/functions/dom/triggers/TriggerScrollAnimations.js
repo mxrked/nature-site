@@ -19,6 +19,10 @@ export default function TriggerScrollAnimations() {
           SCROLL_FADES[i].style.opacity = 1;
           SCROLL_FADES[i].style.transform = "translateY(0)";
         }
+        if (SCROLL_FADES[i].classList.contains("fm-fade-in")) {
+          SCROLL_FADES[i].style.opacity = 1;
+          SCROLL_FADES[i].style.visibility = "visible";
+        }
       }
     }
   }
